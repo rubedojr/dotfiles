@@ -1,0 +1,13 @@
+set showcmd
+set showmatch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set autowrite
+set history=400
+set nocompatible
+set number
+syntax on
+filetype plugin on
+runtime macros/matchit.vim
