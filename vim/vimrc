@@ -8,6 +8,12 @@ set autowrite
 set history=400
 set nocompatible
 set number
+set autoindent
+set pastetoggle=<f5>
+set hidden
+set tabstop=2
+set shiftwidth=2
+set expandtab
 syntax on
-filetype plugin on
+filetype plugin indent on
 runtime macros/matchit.vim
