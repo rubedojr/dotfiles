@@ -120,3 +120,6 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
           man "$@"
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export CLASSPATH=$CLASSPATH:~/.java/junit-4.10.jar
