@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+%	vim/plugin/matchit.vim	/^nnoremap <silent> %  :<C-U>call <SID>Match_wrapper('',1,'n') <CR>$/;"	m
+%	vim/plugin/matchit.vim	/^onoremap <silent> %  v:<C-U>call <SID>Match_wrapper('',1,'o') <CR>$/;"	m
+%	vim/plugin/matchit.vim	/^vnoremap <silent> %  :<C-U>call <SID>Match_wrapper('',1,'v') <CR>m'gv``$/;"	m
+Choose	vim/plugin/matchit.vim	/^fun! s:Choose(patterns, string, comma, branch, prefix, suffix, ...)$/;"	f
+CleanUp	vim/plugin/matchit.vim	/^fun! s:CleanUp(options, mode, startline, startcol, ...)$/;"	f
+Count	vim/plugin/matchit.vim	/^fun! s:Count(string, pattern, ...)$/;"	f
+InsertRefs	vim/plugin/matchit.vim	/^fun! s:InsertRefs(groupBR, prefix, group, suffix, matchline)$/;"	f
+MatchDebug	vim/plugin/matchit.vim	/^  command! -nargs=0 MatchDebug call s:Match_debug()$/;"	c
+Match_debug	vim/plugin/matchit.vim	/^fun! s:Match_debug()$/;"	f
+Match_wrapper	vim/plugin/matchit.vim	/^function! s:Match_wrapper(word, forward, mode) range$/;"	f
+MultiMatch	vim/plugin/matchit.vim	/^fun! s:MultiMatch(spflag, mode)$/;"	f
+ParseSkip	vim/plugin/matchit.vim	/^fun! s:ParseSkip(str)$/;"	f
+ParseWords	vim/plugin/matchit.vim	/^fun! s:ParseWords(groups)$/;"	f
+Ref	vim/plugin/matchit.vim	/^fun! s:Ref(string, d, ...)$/;"	f
+Resolve	vim/plugin/matchit.vim	/^fun! s:Resolve(source, target, output)$/;"	f
+Wholematch	vim/plugin/matchit.vim	/^fun! s:Wholematch(string, pat, start)$/;"	f
+[%	vim/plugin/matchit.vim	/^nnoremap <silent> [% :<C-U>call <SID>MultiMatch("bW", "n") <CR>$/;"	m
+[%	vim/plugin/matchit.vim	/^onoremap <silent> [% v:<C-U>call <SID>MultiMatch("bW", "o") <CR>$/;"	m
+[%	vim/plugin/matchit.vim	/^vmap [% <Esc>[%m'gv``$/;"	m
+]%	vim/plugin/matchit.vim	/^nnoremap <silent> ]% :<C-U>call <SID>MultiMatch("W",  "n") <CR>$/;"	m
+]%	vim/plugin/matchit.vim	/^onoremap <silent> ]% v:<C-U>call <SID>MultiMatch("W",  "o") <CR>$/;"	m
+]%	vim/plugin/matchit.vim	/^vmap ]% <Esc>]%m'gv``$/;"	m
+a%	vim/plugin/matchit.vim	/^vmap a% <Esc>[%v]%$/;"	m
+g%	vim/plugin/matchit.vim	/^nnoremap <silent> g% :<C-U>call <SID>Match_wrapper('',0,'n') <CR>$/;"	m
+g%	vim/plugin/matchit.vim	/^onoremap <silent> g% v:<C-U>call <SID>Match_wrapper('',0,'o') <CR>$/;"	m
+g%	vim/plugin/matchit.vim	/^vnoremap <silent> g% :<C-U>call <SID>Match_wrapper('',0,'v') <CR>m'gv``$/;"	m
+loaded_matchit	vim/plugin/matchit.vim	/^let loaded_matchit = 1$/;"	v
+s:last_mps	vim/plugin/matchit.vim	/^let s:last_mps = ""$/;"	v
+s:last_words	vim/plugin/matchit.vim	/^let s:last_words = ":"$/;"	v
+s:notslash	vim/plugin/matchit.vim	/^let s:notslash = '\\\\\\@<!\\%(\\\\\\\\\\)*'$/;"	v
+s:save_cpo	vim/plugin/matchit.vim	/^let s:save_cpo = &cpo$/;"	v
