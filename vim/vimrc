@@ -7,6 +7,7 @@ set wrapscan
 set autowrite
 set history=400
 set nocompatible
+set backspace=indent,eol,start
 set number
 set autoindent
 set pastetoggle=<f5>
@@ -14,6 +15,12 @@ set hidden
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set grepprg=ack\ --group\ --column\ $*
+set grepformat=%f:%l:%c:%m
+call pathogen#infect()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+colorscheme elflord
 syntax on
 filetype plugin indent on
 runtime macros/matchit.vim

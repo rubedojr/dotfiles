@@ -28,7 +28,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -123,3 +123,17 @@ man() {
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 export CLASSPATH=$CLASSPATH:~/.java/junit-4.10.jar
+
+# Adding android platform-tools to path
+PATH=$PATH:/home/rubedo/Android/adt-bundle-linux-x86_64/sdk/platform-tools
+export PATH
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+EDITOR=vim
+set -o vi
+jscreen() {
+  jruby --ng-server >/dev/null &
+  jrubyp=$!
+  /usr/bin/screen
+  kill -s 1 $jrubyp
+}
