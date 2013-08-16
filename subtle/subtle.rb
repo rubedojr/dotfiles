@@ -763,6 +763,8 @@ tag "media" do
   match "gpicview"
   match "mypaint"
   match "inkscape"
+  match "smplayer"
+  match "mplayer"
   match :name => "ncmpcpp"
   match :name => "mplayer"
 end
@@ -774,7 +776,7 @@ tag "games" do
 end
 
 tag "browser" do
-  match "uzbl|opera|firefox|navigator"
+  match "uzbl|opera|firefox|chrome|google-chrome|navigator"
   match :name => "Security Approval Required"
   match :instance => "sun-awt-X11-XDialogPeer"
 end
