@@ -41,8 +41,8 @@ EOF
 end
 
 # Styler class
-module Subtle # {{{
-  module Contrib # {{{
+module Subtle 
+  module Contrib 
     # Colors
     COLORS = {
       :cyan    => "#00FFFF",
@@ -62,10 +62,10 @@ module Subtle # {{{
     }
 
     # Rectangle class
-    class Rectangle # {{{
+    class Rectangle 
       attr_accessor :x, :y, :width, :height, :color
 
-      ## initialize {{{
+      ## initialize 
       # Create a new rectangle
       # @param  [Fixnum]  x       X position
       # @param  [Fixnum]  y       Y position
@@ -79,9 +79,9 @@ module Subtle # {{{
         @width  = width
         @height = height
         @color  = color
-      end # }}}
+      end 
 
-      ## normalize # {{{
+      ## normalize 
       # Normalize width/height and set left top border to origin
       ##
 
@@ -95,9 +95,9 @@ module Subtle # {{{
           @height *= -1
           @y      -= @height
         end
-      end # }}}
+      end 
 
-      ## is_edge? {{{
+      ## is_edge? 
       # Check if x/y is edge of rectangle
       # @param  [Fixnum]  x  X position
       # @param  [Fixnum]  y  Y position
@@ -116,7 +116,7 @@ module Subtle # {{{
         else
           nil
         end
-      end # }}}
+      end 
 
       ## to_gravity {{{
       # Calculate gravity from rectangle values for given width/height
@@ -145,7 +145,7 @@ module Subtle # {{{
       def ratio(value, ratio) # {{{
         (value.to_f * 100.0 / ratio).to_i
       end # }}}
-    end # }}}
+    end 
 
     # Graviton class
     class Graviton < Gtk::Window # {{{
@@ -468,8 +468,8 @@ module Subtle # {{{
         puts
       end # }}}
     end # }}}
-  end # }}}
-end # }}}
+  end 
+end 
 
 # Implicitly run<
 if __FILE__ == $0

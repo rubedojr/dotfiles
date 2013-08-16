@@ -520,12 +520,11 @@ grab "W-S-f", "urxvt -e mc -b"
 grab "W-A-m" , "urxvt -name ncmpcpp -e ncmpcpp"
 grab "W-A-S-m", "urxvt -name mplayer"
 #grab "W-p", "dmenu_run -sb darkgreen"
-grab "C-Escape", "i3lock -i /home/ahmed/Pictures/wp/108.png -d && ncmpcpp pause"
 #grab "C-Escape", "i3lock -c 000000"
 
 # selector #####################################################################
 begin
-  require "#{ENV["HOME"]}/.config/subtle/selector.rb" 
+  require "#{ENV["HOME"]}/dotfiles/subtle/selector.rb" 
 
   # Set font
   Subtle::Contrib::Selector.font = "xft:termsynu:pixelsize=18:antialias=true" 
@@ -540,9 +539,9 @@ end
 
 # launcher #####################################################################
 begin
-  require "#{ENV["HOME"]}/.config/subtle/launcher.rb"
+  require "#{ENV["HOME"]}/dotfiles/subtle/launcher.rb"
 # Set paths
-  Subtle::Contrib::Launcher.paths = [ "/usr/bin", "/home/ahmed/.config/subtle" ]
+  Subtle::Contrib::Launcher.paths = [ "/usr/bin", "/home/rubedo/dotfiles/subtle" ]
 # Set fonts
   Subtle::Contrib::Launcher.fonts = [
                                      "xft:termsynu:pixelsize=18:antialias=true",
@@ -903,44 +902,44 @@ end
 
 view "home" do
   match "terms|default"
-  icon  "/home/ahmed/.icons/house.xbm"
+  icon  "/home/rubedo/.icons/house.xbm"
   icon_only true
 end
 
 view "www" do
   match "browser|flash"
-  icon "/home/ahmed/.icons/world.xbm"
+  icon "/home/rubedo/.icons/world.xbm"
   icon_only true
 end
 
 view "dev" do
   match "editor|dev"
-  icon "/home/ahmed/.icons/puzzle.xbm"
+  icon "/home/rubedo/.icons/puzzle.xbm"
   icon_only true
 end
 
 view "study" do
   match "study"
-  icon "/home/ahmed/.icons/notepad.xbm"
+  icon "/home/rubedo/.icons/notepad.xbm"
   icon_only true
 end
 
 view "media" do
   match "gimp_.*|media|center66"
-  icon "/home/ahmed/.icons/headphones.xbm"
+  icon "/home/rubedo/.icons/headphones.xbm"
   icon_only true
 end
 
 view "games" do
   match "games"
   dynamic true
-  icon "/home/ahmed/.icons/fox.xbm"
+  icon "/home/rubedo/.icons/fox.xbm"
   icon_only true
 end
 
 view "mail" do
   match "mail|compose"
-  icon "/home/ahmed/.icons/mail.xbm"
+  icon "/home/rubedo/.icons/mail.xbm"
   icon_only true
 end
 
