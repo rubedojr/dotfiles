@@ -1,3 +1,7 @@
+" Global Options ----------------------------------- {{{
+set t_Co=256
+set nonumber
+set laststatus=2
 set showcmd
 set showmatch
 set ignorecase
@@ -8,7 +12,7 @@ set autowrite
 set history=400
 set nocompatible
 set backspace=indent,eol,start
-set number
+set relativenumber
 set autoindent
 set pastetoggle=<f5>
 set hidden
@@ -17,11 +21,163 @@ set shiftwidth=2
 set expandtab
 set grepprg=ack\ --group\ --column\ $*
 set grepformat=%f:%l:%c:%m
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-colorscheme evening
+let mapleader = " "
+let maplocalleader = "\t"
 syntax on
+" }}}
+
+" Mappings --------------------------------------------------- {{{
+" Insert mode --------------------------------------- {{{
+inoremap jk <esc>
+inoremap <c-u> <esc>vwUi
+inoremap <esc> <nop>
+" }}}
+
+" Normal mode -------------------------------------- {{{
+nnoremap <up> <c-w>k
+nnoremap <down> <c-w>j
+nnoremap <left> <c-w>l
+nnoremap <right> <c-w>r
+" move to the end of line
+nnoremap L $
+" move to the beginning of line
+nnoremap H 0
+" surround current word with "
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" surround current word with '
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+" change current word to upppercase
+nnoremap <c-u> vwU
+" edit vimrc in new window
+nnoremap <leader>ev :split $MYVIMRC<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" move current line down
+nnoremap - ddp
+" move current line up
+nnoremap _ ddkP
+" previous buffer
+nnoremap <leader>p :bp<cr>
+" next buffer
+nnoremap <leader>n :bn<cr>
+" save current buffer
+nnoremap <leader>w :w<cr>
+" save all buffers
+nnoremap <leader>W :wall<cr>
+" quit
+nnoremap <leader>q :wq<cr>
+" force quit
+nnoremap <leader>Q :q!<cr>
+" push most recent version of mohuy to couchdb 
+nnoremap <leader>m :! jade jade --out html; erica push http://rubedo:nZzo2k0J35drG6I4SkigA55J1qBTPZirCbsfx95p@127.0.0.1:5984/mohuy<cr>
+" }}}
+
+" Visual mode -------------------------------------- {{{
+vnoremap <left> <
+vnoremap <right> >
+vnoremap <leader>" v`<i"<esc>`>a"<esc>
+vnoremap <leader>' v`<i'<esc>`>a'<esc>
+" }}}
+
+" Operator Pending ------------------------------ {{{
+
+" PARENTHESIS
+" inside next
+onoremap in( :<c-u>normal! f(vi(<c-r>
+"
+" inside last
+onoremap il( :<c-u>normal! F)vi(<c-r>
+"
+" around next
+onoremap an( :<c-u>normal! f(va(<c-r>
+"
+" around last
+onoremap al( :<c-u>normal! F)va(<c-r>
+" PARENTHESIS
+
+" SQUARE BRACKETS
+" inside next
+onoremap in[ :<c-u>normal! f[vi[<c-r>
+"
+" inside last
+onoremap il[ :<c-u>normal! F]vi[<c-r>
+"
+" around next
+onoremap an[ :<c-u>normal! f[va[<c-r>
+"
+" around last
+onoremap il[ :<c-u>normal! F]va[<c-r>
+" SQUARE BRACKETS
+
+" CURLY BRACES
+" inside next
+onoremap in{ :<c-u>normal! f{vi{<c-r>
+"
+" inside last
+onoremap il{ :<c-u>normal! F}vi{<c-r>
+"
+" around next
+onoremap an{ :<c-u>normal! f{va{<c-r>
+"
+" around last
+onoremap il{ :<c-u>normal! F}va{<c-r>
+" CURLY BRACES
+
+" }}}
+" }}}
+
+" pathogen to auto load plugins ------------------------------------- {{{
+call pathogen#infect()
+" }}}
+
+" colorscheme selection ------------------------------------ {{{
+colorscheme elflord
+" }}}
+
 filetype plugin indent on
 runtime macros/matchit.vim
-autocmd BufWritePost * call system("ctags -R")
+
+" CTAGS hook ------------------------------------------------ {{{
+augroup ctags
+  autocmd BufWritePost * call system("ctags -R")
+augroup END
+" }}}
+
+" HTML file settings ---------------------------------------- {{{
+augroup filetype_html
+  autocmd!
+  autocmd BufWritePre,BufRead *.html :normal gg=G
+  autocmd BufNewFile,BufRead *.html setlocal nowrap
+augroup END
+" }}}
+
+" Haskell file settings ------------------------------------ {{{
+augroup filetype_haskell
+  autocmd!
+  autocmd BufNewFile,BufRead *.hs setlocal tabstop=4 shiftwidth=4
+augroup END
+" }}}
+
+" Comment maps per filetype ---------------------------------- {{{
+augroup comments
+  autocmd!
+  autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+  autocmd FileType c nnoremap <buffer> <localleader>c I//<esc>
+  autocmd FileType ruby nnoremap <buffer> <localleader>c I#<esc>
+  autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+augroup END
+" }}}
+
+" Vimscript file settings -------------------------------- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" Makefile settings ------------------------------------------------- {{{
+augroup filetype_make
+  autocmd!
+  autocmd Filetype make setlocal noexpandtab
+augroup END
+" }}}

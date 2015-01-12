@@ -7,7 +7,8 @@ URxvt*transparent: true
 URxvt*shading: 30
 !urxvt*font: xft:UnTaza:pixelsize=10
 !URxvt*font: xft:Terminus-Regular:pixelsize=10
-URxvt*font: xft:Termsynu:pixelsize=9,xft:Inconsolata\ for\ Powerline:pixelsize=9 
+!URxvt*font: xft:Termsynu:pixelsize=20,xft:Inconsolata\ for\ Powerline:pixelsize=20 
+URxvt.font: xft:Termsynu:size=10
 URxvt*saveLines: 10000
 
 !!!!!!!!!!!!!!! MOC !!!!!!!!!!!!!!!!!!!!!!!!!
@@ -42,4 +43,4 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !Emacs
-Emacs.font: Termsynu-9
+Emacs.font: Monospace 12

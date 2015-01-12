@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/rubedo/Documents/progs/jruby/rouge/app/helpers'
 let g:netrw_dirhist_2='/home/rubedo/Documents/progs/jruby/rakesamples/rakelib'
+let g:netrw_dirhist_3='/home/rubedo/myprogs/emberjs/todo/js/libs'
+let g:netrw_dirhist_4='/home/rubedo/myprogs/emberjs/todo/js/models'
+let g:netrw_dirhist_5='/home/rubedo/.urxvt'
+let g:netrw_dirhist_6='/home/rubedo/myprogs/Web/mohuy/jade'
